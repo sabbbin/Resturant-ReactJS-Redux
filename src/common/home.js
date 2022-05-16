@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import {connect} from  'react-redux'
+import { getTotal } from "../action/totalaction";
+function HomeComponent(props) {
+  
 
-export default function Home() {
     const foods=[{
         _id:1,
         img:'img/food1.jpeg',
@@ -22,11 +25,17 @@ export default function Home() {
     const [item, setItem]= useState(foods)
    const[price, totalprice]= useState(0)
 
+   useEffect(()=>{
+     totalprice(props.price)
+     console.log(price)
+
+   },[])
 
    const buttonclick=(e)=>{
-        console.log('onbutton',e)
-        totalprice(price+e)
-        console.log(price)
+     let sum=e+props.price
+     console.log(props.price)
+       props.getTotalfun(sum)
+       
    }
 
   return (
@@ -59,3 +68,13 @@ export default function Home() {
     </>
   );
 }
+const mapStateToProps=(rootStore)=>({
+  price:rootStore.Total.totalprice
+})
+const mapDispatchToProps={
+  getTotalfun:getTotal
+}
+
+
+
+export const Home= connect(mapStateToProps, mapDispatchToProps) (HomeComponent)

@@ -3,7 +3,7 @@ import { TopNavbar } from '../header/topnavbar'
 import { Sidebar } from './sidebar/siderbar'
 import './common.css'
 import { Outlet } from 'react-router-dom'
-import Home from './home'
+import {Home} from './home'
 
 export default function HomeLayout() {
   return (
