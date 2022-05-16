@@ -1,0 +1,9 @@
+.sidebar1{
+    position:absolute;
+    height: calc(100vh - 54px);
+    width: 30%;
+    right:0
+}
+.items-right{
+  text-align: right;  
+}

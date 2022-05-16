@@ -1,0 +1,13 @@
+.navtext{
+    color:white !important;
+    position:relative;
+    left:40%
+}
+
+.navbar{
+    height: 60px;
+    position:fixed ;
+}
+.navbarimg{
+    height:30px
+}
