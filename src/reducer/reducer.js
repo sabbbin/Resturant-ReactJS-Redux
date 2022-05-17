@@ -1,7 +1,7 @@
 import { ActionTypes } from "../action/totalaction";
 
 
-export const TotalPrice=(state={price:0}, Action)=>{
+export const TotalPrice=(state, Action)=>{
    
     switch(Action.type){
         case ActionTypes.TOTAL_PRICE:

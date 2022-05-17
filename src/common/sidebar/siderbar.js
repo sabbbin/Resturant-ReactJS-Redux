@@ -10,8 +10,8 @@ function SidebarComponent(props) {
      <div className='row '>
        <div className="items-right">
 
-        <label className='px-3'>Total bill</label>
-        <input type='text'  style={{width:120}} value={props.price} /> 
+        <label className='px-3'>Total bill Rs:</label>
+        <input type='text'  className='inputtotal' style={{width:120}} value= {props.price} /> 
        </div>
 
     </div>
