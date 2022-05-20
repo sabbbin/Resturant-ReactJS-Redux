@@ -1,13 +1,12 @@
-.sidebar1{
-    position:absolute;
-    height: calc(100vh - 54px);
-    width: 30%;
-    right:0
-}
+
 .items-right{
   text-align: right;  
 }
 .inputtotal{
   text-align: right;
   padding-left: 1em;
+}
+
+#sidebarrow{
+ padding-top: 160px;
 }

@@ -31,6 +31,46 @@ function HomeComponent(props) {
       pric: 180,
       status: true,
     },
+    {
+      _id: 5,
+      img: "img/food4.jpeg",
+      des: "this is best food",
+      pric: 180,
+      status: true,
+    },
+    {
+      _id: 6,
+      img: "img/food4.jpeg",
+      des: "this is best food",
+      pric: 180,
+      status: true,
+    },
+    {
+      _id: 7,
+      img: "img/food4.jpeg",
+      des: "this is best food",
+      pric: 180,
+      status: true,
+    },
+    {
+      _id: 8,
+      img: "img/food4.jpeg",
+      des: "this is best food",
+      pric: 180,
+      status: true,
+    }, {
+      _id: 9,
+      img: "img/food4.jpeg",
+      des: "this is best food",
+      pric: 180,
+      status: true,
+    }, {
+      _id: 10,
+      img: "img/food4.jpeg",
+      des: "this is best food",
+      pric: 180,
+      status: true,
+    }
   ];
   const [item, setItem] = useState(foods);
   const [price, settotalprice] = useState(0);
@@ -54,6 +94,10 @@ function HomeComponent(props) {
         existing_cart[index]['qty']=quantity
         existing_cart[index]['total']=existing_cart[index]['pric']*quantity
         settotalprice(existing_cart[index]['total'])
+        let sum = existing_cart[index]['total'] + props.price;
+
+        props.getTotalfun(sum);
+  
         
         localStorage.setItem("_orders", JSON.stringify(existing_cart));
 
@@ -64,21 +108,23 @@ function HomeComponent(props) {
         orderitem['status']=!orderitem['status']
         orderitem['qty']=quantity
         orderitem['total']=orderitem['pric']*quantity
+        console.log(orderitem['total'])
         settotalprice(orderitem['total'])
+        let sum = orderitem['total'] + props.price;
+
+        props.getTotalfun(sum);
         
         existing_cart.push(orderitem);
         localStorage.setItem("_orders", JSON.stringify(existing_cart));
       }
+
+     
     
-    
-    
-   
+
+
+
     
   
-
-    let sum = price + props.price;
-
-    props.getTotalfun(sum);
   };
 
   return (
@@ -89,7 +135,7 @@ function HomeComponent(props) {
             item.map((prod, ind) => (
               <div
                 key={ind}
-                className="col-xl-4 col-lg-4 col-md-4 col-sm-12 p-2"
+                className="col-xl-2 col-lg-3 col-md-5 col-sm-5 p-2"
               >
                 <div className="card mb-5 text-center">
                   <div className="card-body">
