@@ -1,25 +1,114 @@
-#sidebar{
-    margin-top: 20px;
-    height:70vh;
-    border:3px solid red;
-    padding:6px;
-    
+.container_page{
+  
+  
+    background-color: aqua;
+    width: 100vw;
 }
-#main-content{
-    margin-top: 20px;
-    height: 70vh;
-    padding: 6px;
-    border:3px solid #808080;
-    overflow-y: scroll;
-    
-    position: relative;
+
+.wrapper{
+    display: flex;
+    justify-content: space-around;
 }
-#mainpage{
-    padding: 10px;
-    position:fixed;
+
+.wrapper .content_left{
+    width: 50%;
+    border: 2px solid  green;
+    padding:0px 20px;
 }
-#title-name{
+
+.wrapper .content_right{
+    width: 30%;
+    border: 2px solid gray;
+    padding: 0px 20px;
+}
+
+.content_left h5,
+.content_right h5
+{
     text-align: center;
-    margin-top: 17px;
-    
+   font-size: 30px;
+    margin: 10px 0px;
+    padding: 0;
+    color: white;
 }
+
+
+/* siderbar-left */
+
+.home_container{
+    padding:10px;   
+
+    background-color: rebeccapurple;
+   }
+   
+   
+   .home_wrapper{
+   
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+      
+   }
+   
+   .home_container img{
+       height: 120px;
+       object-fit:cover;
+       width: 100%;
+
+   }
+
+   .home_container .home_card{
+    overflow: hidden;
+    margin: 10px;
+     width: 20%;
+    border-radius: 20px;
+    background-color: red;
+    text-align: center;
+
+
+   }
+
+   .home_container .card_content{
+    padding: 5px;
+   }
+
+   .card_content p{
+    color: aliceblue;
+    background-color: gray;
+    border-radius: 10px;
+   }
+   .home_container .card_footer{
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+   }
+
+ .card_footer input{
+    width: 40px;
+    border: 0;
+    border-radius: 3px;
+   }
+   .card_footer input:focus{
+    outline: none;
+   }
+
+   .card_footer button{
+    width: 60px;
+   }
+
+   
+
+   @media  screen and (max-width:1330px) {
+    .home_container .home_card {
+       
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+    .wrapper .content_left{
+        width: 100%;
+    }
+    .wrapper .content_right{
+        width: 100%;
+    }
+   }

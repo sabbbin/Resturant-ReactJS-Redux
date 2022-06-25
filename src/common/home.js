@@ -129,30 +129,24 @@ function HomeComponent(props) {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          {item &&
-            item.map((prod, ind) => (
-              <div
-                key={ind}
-                className="col-xl-2 col-lg-3 col-md-5 col-sm-5 p-2"
-              >
-                <div className="card mb-5 text-center">
-                  <div className="card-body">
-                    <div className="card-title">
-                      <img
-                        height={90}
-                        width={120}
-                        src={process.env.PUBLIC_URL + prod.img}
-                      ></img>
-                    </div>
-                    <h6> {prod.des}</h6>
-                    <h6>Rs: {prod.pric}</h6>
-                    
-                    <div className="d-flex justify-content-between">
 
-                    
-                    <input type='number' style={{textAlign:"right", width:70}} defaultValue={0
+     <div className="home_container">
+
+      <div className="home_wrapper">
+
+ {
+  item && item.map((prod,id)=>(
+
+    <div className="home_card">
+    <div className="card_title">
+      <img  src={prod.img} />
+    </div>
+    <div className="card_content">
+       <h6>{prod.des}</h6>
+       <p>Rs: {prod.pric}</p>
+    </div>
+    <div className="card_footer">
+    <input type='number' style={{textAlign:"right"}} defaultValue={0
                     } min={1} max={5} onChange={(e)=>setQuantity(e.target.value)} placeholder="quantity" /> 
                     {prod.status?(
                     <button
@@ -177,14 +171,20 @@ function HomeComponent(props) {
                       Cancel
                     </button>
                     )}
-                     </div>
-                    
-                  </div>
-                </div>
-              </div>
-            ))}
-        </div>
+
+    </div>
+
+   </div>
+
+  ))
+ }
+             
+
+        
       </div>
+
+     </div>
+
     </>
   );
 }

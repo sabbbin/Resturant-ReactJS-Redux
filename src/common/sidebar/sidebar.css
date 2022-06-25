@@ -1,12 +1,52 @@
+.sidebar{
+ height: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  padding: 10px;
+ 
+  width: 25%;
+  background-color: rebeccapurple;
+}
 
-.items-right{
-  text-align: right;  
-}
-.inputtotal{
-  text-align: right;
-  padding-left: 1em;
+.bill{
+  padding: 0px 20px;
+  background-color: rebeccapurple;
 }
 
-#sidebarrow{
- padding-top: 160px;
+.bill_amount{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0px;
 }
+
+.bill_amount h6{
+  width: 50%;
+}
+
+.bill_amount input{
+ width: 30%;
+  height: 30px;
+}
+.bill_btn{
+  display: flex;
+  justify-content: center;
+}
+
+.bill_btn button{
+  margin: 5px 10px;
+  padding: 5px;
+}
+
+@media  screen and (max-width:1330px) {
+
+  .sidebar{
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+
